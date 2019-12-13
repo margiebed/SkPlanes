@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { MaterialModule } from './material/material.module';
 import { CoreModule } from './core/core.module';
+import{AngularFireDatabaseModule} from "angularfire2/database"
+import { FlightsModule } from './flights/flights.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,11 @@ import { CoreModule } from './core/core.module';
     AngularFireModule.initializeApp(environment.firebase),
     MaterialModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule, 
+    AngularFireDatabaseModule,
+    FlightsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

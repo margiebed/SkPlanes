@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-new-flight',
   templateUrl: './new-flight.component.html',
   styleUrls: ['./new-flight.component.scss']
 })
-export class NewFlightComponent implements OnInit {
+export class NewFlightComponent  {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(
+    private dialogRef: MatDialogRef<NewFlightComponent>) { }
 
 }

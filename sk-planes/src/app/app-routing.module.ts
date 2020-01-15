@@ -15,7 +15,7 @@ children: [
 {path: 'flights', component: FlightsComponent},
 ]
   },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

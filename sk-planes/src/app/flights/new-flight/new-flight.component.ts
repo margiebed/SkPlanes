@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
+import { FlightFormComponent } from '../flight-form/flight-form.component';
+import { FlightsService } from 'src/app/core/services/flights.service';
 
 @Component({
   selector: 'app-new-flight',
@@ -7,8 +9,11 @@ import { MatDialogRef } from '@angular/material';
   styleUrls: ['./new-flight.component.scss']
 })
 export class NewFlightComponent  {
+  @ViewChild('flightForm', {static: false}) flightForm: FlightFormComponent;
 
   constructor(
+    private flightsService: FlightsService,
+    private toast: MatSnackBar,
     private dialogRef: MatDialogRef<NewFlightComponent>) { }
 
 }

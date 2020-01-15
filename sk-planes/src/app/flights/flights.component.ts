@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { FlightsService } from '../core/services/flights.service';
 import { Observable } from 'rxjs';
-import { Flight } from "../models/Flight";
+import { Flight } from '../models/Flight';
 import { MatDialog } from '@angular/material';
 import { NewFlightComponent } from './new-flight/new-flight.component';
 
@@ -18,8 +18,8 @@ export class FlightsComponent  {
 private dialog: MatDialog,
 private flightsService: FlightsService) { }
 
-  openNewFlightModal(){
-this.dialog.open(NewFlightComponent)
+  openNewFlightModal() {
+this.dialog.open(NewFlightComponent);
   }
 
 }

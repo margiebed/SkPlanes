@@ -1,3 +1,4 @@
+import { DetailsComponent } from './details/details.component';
 import { Component} from '@angular/core';
 import { FlightsService } from '../core/services/flights.service';
 import { Observable } from 'rxjs';
@@ -22,4 +23,7 @@ private flightsService: FlightsService) { }
 this.dialog.open(NewFlightComponent);
   }
 
+  showDetails(flight) {
+    this.dialog.open(DetailsComponent, {data: flight});
+  }
 }

@@ -10,7 +10,7 @@
     <div class="col">
 
       <button mat-raised-button mat-dialog-close >Cancel</button>
-          <button mat-raised-button color="primary">Create</button>
+          <button mat-raised-button color="primary" [disabled]="flightForm.form.invalid" (click)="createFlight()">Create</button>
 
 
     </div>

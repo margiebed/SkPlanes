@@ -1,8 +1,12 @@
-<form [formGroup] = "form">
+<form [formGroup]="form">
   <div class="row">
     <div class="col-sm-8">
       <mat-form-field>
-        <input matInput formControlName="code" placeholder="Code">
+        <input matInput formControlName="code" placeholder="Code" #codeInput>
+        <mat-error *ngIf="form.get('code').hasError('required')">Code jest wymagany</mat-error>
+        <mat-error *ngIf="form.get('code').hasError('minlength')">Code jest za mały</mat-error>
+        <mat-error *ngIf="form.get('code').hasError('maxlength')">Code jest za duży</mat-error>
+        <mat-hint align="end">{{codeInput.value.length}}/7</mat-hint>
       </mat-form-field>
     </div>
   </div>
@@ -46,7 +50,7 @@
   <div class="row">
     <div class="col">
 
-        <mat-checkbox formControlName="withSKPlanesDiscount"> With SK Discount</mat-checkbox>
+      <mat-checkbox formControlName="withSKPlanesDiscount"> With SK Discount</mat-checkbox>
 
     </div>
   </div>
@@ -58,8 +62,8 @@
         <mat-icon class="float-right" (click)="removeCrewMember(index)">delete_forever</mat-icon>
 
 
+      </div>
     </div>
-  </div>
 
     <div class="row" [formGroupName]="index">
       <div class="col-sm-5">
@@ -76,7 +80,7 @@
         </mat-form-field>
       </div>
     </div>
-</div>
+  </div>
 
   <div class="row">
     <div class="col">

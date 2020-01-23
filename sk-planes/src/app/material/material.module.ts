@@ -7,6 +7,12 @@ hasBackdrop: true
 
 };
 
+const MAT_SNACK_BAR_GLOBAL_CONFIG: MatSnackBarConfig = {
+duration: 2500,
+verticalPosition: 'bottom',
+horizontalPosition: 'center'
+};
+
 import {
   MatCardModule,
    MatFormFieldModule,
@@ -19,7 +25,9 @@ import {
    MatToolbarModule,
    MatIconModule,
    MatDialogConfig,
-   MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material';
+   MAT_DIALOG_DEFAULT_OPTIONS,
+   MAT_SNACK_BAR_DEFAULT_OPTIONS,
+   MatSnackBarConfig} from '@angular/material';
 
 const MATERIAL_MODULES = [
   MatIconModule,
@@ -40,8 +48,9 @@ const MATERIAL_MODULES = [
   exports: [ ...MATERIAL_MODULES],
   providers:
 [
- { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: MAT_DIALOG_GLOBAL_CONFIG
-}]
+  { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: MAT_DIALOG_GLOBAL_CONFIG},
+  { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: MAT_SNACK_BAR_GLOBAL_CONFIG}
+]
 
 })
 export class MaterialModule { }

@@ -6,9 +6,9 @@
       alt=""
       routerLink="/dashboard"
     />
-    <mat-icon class="logout-icon float-right">power_settings_new</mat-icon>
+    <mat-icon class="logout-icon float-right" (click)="logout()">power_settings_new</mat-icon>
   </div>
-  <span class="user-login float-right">Hello, John Doe</span>
+  <span class="user-login float-right">Hello, {{user.email}}</span>
 </mat-toolbar>
 
 <div class="container">

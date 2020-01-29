@@ -27,4 +27,9 @@ login() {
 
 }
 
+register(){
+  this.authService.register(this.credentials)
+  .then(user => this.toast.open('Acount created, please log in!', '', {panelClass: 'toast-succes'}))
+  .catch(error => this.toast.open(error.message, '', {panelClass: 'toast-error'}));
+}
 }

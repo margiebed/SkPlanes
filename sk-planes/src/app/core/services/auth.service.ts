@@ -15,8 +15,19 @@ export class AuthService {
     ).then(userCredential => this.userData = userCredential.user);
   }
 
+ register(credentials: {email: string, password: string}) {
+    return this.fireAuth.auth.createUserWithEmailAndPassword(
+      credentials.email,
+      credentials.password
+    );
+  }
+
   get user(){
     return this.userData;
+  }
+
+  isLoggedIn(){
+    return !! this.userData;
   }
 
   logout(){

@@ -23,7 +23,6 @@ import { AngularFireAuthModule} from 'angularfire2/auth';
     AppRoutingModule,
     CoreModule,
     AngularFireDatabaseModule,
-    FlightsModule,
     BrowserAnimationsModule,
     AngularFireAuthModule
   ],

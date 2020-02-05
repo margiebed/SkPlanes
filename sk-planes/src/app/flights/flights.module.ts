@@ -8,6 +8,7 @@ import { FlightFormComponent } from './flight-form/flight-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { EditFlightComponent } from './edit-flight/edit-flight.component';
+import { FlightRoutingModule } from './flights-routing.module';
 
 
 
@@ -19,7 +20,8 @@ imports:
     CommonModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlightRoutingModule
   ],
 
 entryComponents: [NewFlightComponent, DetailsComponent],
